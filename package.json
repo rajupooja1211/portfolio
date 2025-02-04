@@ -2,6 +2,10 @@
   "name": "my-new-portfolio",
   "version": "0.1.0",
   "private": true,
+<<<<<<< HEAD
+=======
+
+>>>>>>> fc02b66 (Updated CSS for full mobile responsiveness)
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.2",
     "cra-template": "1.2.0",
