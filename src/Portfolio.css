@@ -1,3 +1,44 @@
+/* Default styles for Desktop */
+body {
+    font-size: 18px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* 📱 Mobile-friendly styles (for screens < 768px) */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px; /* Reduce title size */
+    }
+
+    .intro-text {
+        font-size: 16px;
+    }
+
+    .button {
+        width: 100%; /* Make buttons full-width */
+    }
+}
+
+/* 📱 For smaller phones (iPhones, Galaxy, etc. < 480px) */
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    .intro-text {
+        font-size: 14px;
+    }
+
+    .button {
+        font-size: 
+
+
 /* Ensures the header section takes full screen */
 .relative {
   position: relative;
