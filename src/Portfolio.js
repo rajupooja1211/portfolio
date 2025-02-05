@@ -204,7 +204,7 @@ const Portfolio = () => {
               <input type="email" name="email" placeholder="Your Email" value={formData.email} onChange={handleChange} required />
               <textarea name="message" placeholder="Your Message" value={formData.message} onChange={handleChange} required></textarea>
               <div className="buttonContainer">
-              <button onClick={handleSendEmail}>Send Email</button>
+              <button className= "sendButton" onClick={handleSendEmail}>Send Email</button>
 
   <button className="closeButton" onClick={toggleContactForm}>Close</button>
 </div>
