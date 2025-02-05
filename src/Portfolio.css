@@ -72,7 +72,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(213, 234, 215, 0.5); /* Pastel green with transparency */
+  background: black;
   display: flex;
   align-items: center;
   justify-content: center;
