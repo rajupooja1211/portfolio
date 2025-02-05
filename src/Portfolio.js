@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css'; // Import FontAwesome styles
+import emailjs from "emailjs-com"; 
 import './Portfolio.css'; // Ensure you have this file for additional styling
 import project1Image from './assets/images/project1.png';
 import project2Image from './assets/images/project2.png';
@@ -127,11 +128,35 @@ const Portfolio = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSendEmail = () => {
-    const { name, email, message } = formData;
-    const mailtoLink = `mailto:poojaraju1211@gmail.com?subject=Contact%20from%20${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0A%0AFrom:%20${encodeURIComponent(email)}`;
-    
-    window.location.href = mailtoLink;
+  const handleSendEmail = (e) => {
+    e.preventDefault(); // Prevent form from refreshing
+    if (!formData.name || !formData.email || !formData.message) {
+      alert("⚠️ Please fill in all fields before sending the email.");
+      return;
+    }
+
+
+    emailjs.send(
+      "service_0rexp11",  // ⬅️ Replace with your EmailJS Service ID
+      "template_ia2a1zk", // ⬅️ Replace with your EmailJS Template ID
+      {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message
+      },
+      "gbyDvZb8BR31lg8jt" // ⬅️ Replace with your EmailJS User ID
+    )
+    .then(
+      (response) => {
+        console.log("Email sent successfully:", response);
+        alert("Email sent successfully! 📩");
+        setFormData({ name: "", email: "", message: "" });
+      },
+      (error) => {
+        console.error("Error sending email:", error);
+        alert("Failed to send email. Please try again.");
+      }
+    );
   };
   return (
     <div id="root">
